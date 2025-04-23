@@ -4,7 +4,7 @@
  */
 package br.dev.umbra.ProjetoSistema.domain.repository;
 
-import br.dev.umbra.ProjetoSistema.domain.model.UserEntity;
+import br.dev.umbra.ProjetoSistema.domain.model.Food;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
@@ -12,6 +12,6 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author Sam_Umbra
  */
-public interface UserEntityRepository extends JpaRepository<UserEntity, Long> {
+public interface FoodRepository extends JpaRepository<Food, Long> {
     
 }

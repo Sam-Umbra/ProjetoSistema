@@ -10,7 +10,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import java.util.Objects;
 
@@ -19,38 +18,33 @@ import java.util.Objects;
  * @author Sam_Umbra
  */
 @Entity
-@Table(name = "user")
-public class UserEntity {
+@Table(name = "foods")
+public class Food {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @NotBlank
-    private String name;
-    
     @Column(unique = true)
-    @NotBlank
-    private String login;
+    private String title;
     
     @NotBlank
-    private String password;
+    private String image;
     
     @NotBlank
-    @Email
-    private String email;
+    private String price;
 
-    public UserEntity() {
+    public Food() {
     }
 
-    public UserEntity(Long id, String name, String login, String password, String email) {
+    public Food(Long id, String title, String image, String price) {
         this.id = id;
-        this.name = name;
-        this.login = login;
-        this.password = password;
-        this.email = email;
+        this.title = title;
+        this.image = image;
+        this.price = price;
     }
-    
+
     public Long getId() {
         return id;
     }
@@ -59,42 +53,34 @@ public class UserEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getLogin() {
-        return login;
+    public String getImage() {
+        return image;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPrice() {
+        return price;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 67 * hash + Objects.hashCode(this.id);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -109,9 +95,9 @@ public class UserEntity {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final UserEntity other = (UserEntity) obj;
+        final Food other = (Food) obj;
         return Objects.equals(this.id, other.id);
     }
-    
+
     
 }
