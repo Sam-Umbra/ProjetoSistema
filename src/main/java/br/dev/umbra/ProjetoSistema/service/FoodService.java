@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/springframework/Service.java to edit this template
  */
-package br.dev.umbra.ProjetoSistema.domain.service;
+package br.dev.umbra.ProjetoSistema.service;
 
-import br.dev.umbra.ProjetoSistema.domain.model.Food;
+import br.dev.umbra.ProjetoSistema.entities.Food;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import br.dev.umbra.ProjetoSistema.domain.repository.FoodRepository;
+import br.dev.umbra.ProjetoSistema.repositories.FoodRepository;
 import java.util.Optional;
 
 /**

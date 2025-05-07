@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.dev.umbra.ProjetoSistema.api.controller;
+package br.dev.umbra.ProjetoSistema.controller;
 
-import br.dev.umbra.ProjetoSistema.domain.model.Food;
-import br.dev.umbra.ProjetoSistema.domain.service.FoodService;
+import br.dev.umbra.ProjetoSistema.entities.Food;
+import br.dev.umbra.ProjetoSistema.service.FoodService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,14 +19,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import br.dev.umbra.ProjetoSistema.domain.repository.FoodRepository;
+import br.dev.umbra.ProjetoSistema.repositories.FoodRepository;
 import java.util.Optional;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 /**
  *
  * @author Sam_Umbra
  */
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping(value = "foods")
 public class FoodController {
     
